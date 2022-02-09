@@ -8,7 +8,7 @@ GOALS:
 
 
 ## Bash file
-**new bash_file myfile /path/to/myfile -d "This is my bash script description"**
+**disco new bash_file myfile /path/to/myfile -d "This is my bash script description"**
 what it does: 
 - Create file
 - Make it executable
@@ -21,17 +21,30 @@ Header composed of:
   - description
 
 ## Project
- **new project name /path/to/myproject**
-
-Create a directory standardize structure for all my project:
+ **disco new project name /path/to/myproject**
+GOALS:
+- Dependencies management. Goal is that all dependencies for a specific project can be saved and setup easily on another setup
+  - packet management (apt-get)
+  - configuration, all changes to a configuration file (~/.) must be saved and the tool need to provide easy way of applying them to new setup
+- Create a directory standardize structure for all my project:
 .
 |_ src
 |_ bin
 |_ dependencies
 |_ ...
 
-Features:
-- Dependencies management. Goal is that all dependencies for a specific project can be saved and setup easily on another setup
-  - packet management (apt-get)
-  - configuration, all changes to a configuration file (~/.) must be saved and the tool need to provide easy way of applying them to new setup
+### IDEAS
+*Dependencies*
 
+1) Manual implementation: disco add dependencies
+-  Save in project folder a disco configuration file which will list all dependencies for project.
+- Expose a feature "disco add dependencie project_name, which will save it to disco conf file
+2) Automatic:
+- Each time packet manager is called during project development, save history in disco conf file
+
+*Configurations*
+- Each time a conf file in home directoy is modify, trigger a cron job that save the diff changes in disco conf file
+
+1) 
+## TODO
+- Add descrription as an optinal arg to cmd: disco new bash . -d "Descriptions"
