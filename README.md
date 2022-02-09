@@ -8,18 +8,20 @@ GOALS:
 
 
 ## Bash file
-** new bash_file myfile /path/to/myfile -d "This is my bash script description" **
-
-Create a template (header) of a **bash**
+**new bash_file myfile /path/to/myfile -d "This is my bash script description"**
+what it does: 
+- Create file
+- Make it executable
+- Create a template (header) of a **bash**
 Header composed of: 
-- Date, Time
-- Author
-- Contact information: email
-- name of the file
-- description
+  - Date, Time
+  - Author
+  - Contact information: email
+  - name of the file
+  - description
 
 ## Project
-** new project name /path/to/myproject **
+ **new project name /path/to/myproject**
 
 Create a directory standardize structure for all my project:
 .

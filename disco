@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Author:	Theophile Leroy
+# 		leroy.theophile@gmail.com
+# File name:	disco
+# Description:	disco is an automated tool to make my developer life easier. The purpose is to be able to automate dev-file generation as well as project generation. README.md for more details.
+# ===============================================================================================================================================================================================
+
+today=$(date +%Y.%m.%d)
+header="#!/bin/bash\n#\n# Author:\tTheophile Leroy\n#\t\tleroy.theophile@gmail.com\n# File name:	\t$3\n# Date: \t$today\n# Description:\n#=================================\n"
+
+new_bash () {
+	BASH_FILE="$4/$3"
+	echo "Creating file: \t$BASH_FILE"
+	# Test if file already exist
+	test -f $BASH_FILE && ( echo "File already exist! Leaving script..."; exit 1) 
+	# Create and make it executable
+	touch $BASH_FILE && chmod +x $BASH_FILE
+	echo -e $header >> $BASH_FILE
+	vim $BASH_FILE
+}
+
+new_project () {
+	echo ""
+}
+
+if [ $# -lt 4 ]; then
+	echo "	Provided $# args, must be at least 3."
+	echo "	Usage: disco new bash_file/project /path/to/"
+	echo "	optional option -d \"Description\""
+	exit 1
+fi
+
+if [ $1 = "new" ]; then
+	if [ $2 = "bash" ]; then
+		echo "creating bash file command."
+		new_bash $@
+	elif [ $2 = "project" ]; then
+		echo "create project"
+	fi
+fi
