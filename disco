@@ -21,7 +21,7 @@ new_bash () {
 }
 
 new_project () {
-	echo ""
+	echo "TODO!"
 }
 
 if [ $# -lt 4 ]; then

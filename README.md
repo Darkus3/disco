@@ -41,6 +41,8 @@ GOALS:
 - Expose a feature "disco add dependencie project_name, which will save it to disco conf file
 2) Automatic:
 - Each time packet manager is called during project development, save history in disco conf file
+3) All .deb file installed with packet manager are stored in /var/cache/apt/archives. An implementation could be to save all those files in a package repo at the end of each working sessions.
+[more on this here](https://askubuntu.com/questions/408608/saving-a-apt-get-file-for-future-installations-how-do-i-do-it)
 
 *Configurations*
 - Each time a conf file in home directoy is modify, trigger a cron job that save the diff changes in disco conf file
