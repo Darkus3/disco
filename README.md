@@ -39,6 +39,7 @@ GOALS:
 1) Manual implementation: disco add dependencies
 -  Save in project folder a disco configuration file which will list all dependencies for project.
 - Expose a feature "disco add dependencie project_name, which will save it to disco conf file
+- Expose a feature "disco check dependencie project_name, which will check if all listed dep are sync on the setup
 2) Automatic:
 - Each time packet manager is called during project development, save history in disco conf file
 3) All .deb file installed with packet manager are stored in /var/cache/apt/archives. An implementation could be to save all those files in a package repo at the end of each working sessions.
